@@ -17,3 +17,21 @@ def solution(A):
                 return 0
     return 1
     pass
+
+### Return an N-length frequency array that flattens when A[i] == N + 1
+
+def solution(N, A):
+    counters = [0] * N
+    maximum = 0
+    maxxed = False
+    for i in A:
+        if 0 < i and N >= i:
+            counters[i - 1] = counters[i - 1] + 1
+            maxxed = False
+            if maximum < counters[i - 1]:
+                maximum = counters[i - 1]
+        elif N < i and not maxxed:
+            counters = [maximum] * N
+            maxxed = True
+    return counters
+    pass
