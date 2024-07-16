@@ -18,7 +18,7 @@ def solution(A):
     return 1
     pass
 
-### Return an N-length frequency array that flattens when A[i] == N + 1
+### Return an N-length frequency array that flattens by maximum frequency when A[i] == N + 1
 
 def solution(N, A):
     counters = [0] * N
